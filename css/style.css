@@ -783,7 +783,7 @@ nav a.active {
 .academics-hero {
     position: relative;
     width: 100%;
-    min-height: 85vh;
+    min-height: 70vh;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -1856,7 +1856,7 @@ a {
     }
 
     .academics-hero {
-        min-height: 60vh;
+        min-height: 50vh;
     }
 
     .academics-hero .hero-text h1 {
