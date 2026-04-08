@@ -715,6 +715,9 @@ line-height:1.7;
 @media(max-width:768px){
 header{
 flex-direction:column;
+position: fixed;
+left: 0;
+right: 0;
 }
 
 .cards,
@@ -1062,6 +1065,7 @@ nav a.active {
 body {
     font-family: Arial, sans-serif;
     margin: 0;
+    padding-top: 80px;
     line-height: 1.6;
     color: #333;
 }
@@ -1499,7 +1503,9 @@ a {
         padding: 12px 15px;
         flex-direction: column;
         align-items: stretch;
-        position: relative;
+        position: fixed;
+        left: 0;
+        right: 0;
     }
 
     .logo-area {
@@ -1711,6 +1717,9 @@ a {
     header {
         padding: 8px 12px;
         align-items: stretch;
+        position: fixed;
+        left: 0;
+        right: 0;
     }
 
     .logo-area {
