@@ -5,6 +5,7 @@
 
 body{
 margin:0;
+padding-top: 80px;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 line-height:1.6;
 color:#222;
@@ -29,8 +30,10 @@ color:#333;
 /* ===== HEADER / NAVIGATION ===== */
 
 header{
-position:sticky;
+position:fixed;
 top:0;
+left:0;
+right:0;
 background:white;
 display:flex;
 justify-content:space-between;
@@ -107,7 +110,6 @@ color:#ffd700;
 position:relative;
 height:90vh;
 overflow:hidden;
-margin-top: 80px;
 }
 
 .slider,.slide{
@@ -453,7 +455,6 @@ line-height:1.7;
 
 .about-hero{
     position: relative;
-    margin-top: 80px;
     width: 100%;
     height: auto;      /* IMPORTANT — remove fixed height */
     overflow: hidden;
@@ -784,7 +785,6 @@ nav a.active {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 80px;
 }
 
 .academics-hero::before {
@@ -1084,7 +1084,6 @@ a {
     justify-content: center;
     background: linear-gradient(135deg, #00182f 0%, #003366 100%);
     padding: 0 20px;
-    margin-top: 80px;
 }
 
 .admission-hero .hero-content {
@@ -1334,7 +1333,6 @@ a {
 
 .contact-hero {
     position: relative;
-    margin-top: 80px;
     width: 100%;
     height: auto;
     overflow: hidden;
