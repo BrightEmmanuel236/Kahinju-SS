@@ -274,21 +274,39 @@ document.querySelector('.hero').addEventListener('mouseenter', stopAutoSlide);
 document.querySelector('.hero').addEventListener('mouseleave', startAutoSlide);
 
 /* COUNTER */
-document.querySelectorAll(".counter").forEach(counter=>{
-const update=()=>{
-const target=+counter.dataset.target;
-const count=+counter.innerText;
-const inc=target/100;
+const statsSection = document.querySelector('.stats');
+let countersStarted = false;
 
-if(count<target){
-counter.innerText=Math.ceil(count+inc);
-setTimeout(update,20);
-}else{
-counter.innerText=target;
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !countersStarted) {
+            countersStarted = true;
+            startCounters();
+        }
+    });
+}, { threshold: 0.3 }); // Trigger when 30% of the section is visible
+
+if (statsSection) {
+    observer.observe(statsSection);
 }
-};
-update();
-});
+
+function startCounters() {
+    document.querySelectorAll(".counter").forEach(counter => {
+        const update = () => {
+            const target = +counter.dataset.target;
+            const count = +counter.innerText;
+            const inc = target / 100;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(update, 20);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        update();
+    });
+}
 
 
 
