@@ -1606,17 +1606,17 @@ a {
 
     .hero-buttons {
         flex-direction: column;
-        gap: 0.8rem;
+        gap: 0.7rem;
     }
 
     .btn-primary, .btn-secondary {
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
+        padding: 0.55rem 1.2rem;
+        font-size: 0.9rem;
     }
 
     .prev, .next {
-        padding: 0.8rem;
-        font-size: 1.5rem;
+        padding: 0.7rem;
+        font-size: 1.4rem;
     }
 
     .prev {
