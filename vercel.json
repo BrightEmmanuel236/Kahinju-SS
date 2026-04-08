@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/academics", "destination": "/academics.html" },
+    { "source": "/admissions", "destination": "/admissions.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ]
+}

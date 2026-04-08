@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kahinju Senior Secondary School</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- CSS -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<div class="logo-area">
+<img src="images/logo.jpg" alt="School Logo">
+<h2>Kahinju S.S.S</h2>
+</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="academics.html">Academics</a>
+<a href="admissions.html">Admissions</a>
+<a href="contact.html">Contact Us</a>
+</nav>
+</header>
+
+<!-- ================= HERO SLIDER ================= -->
+<section class="hero">
+
+<div class="slider">
+
+<div class="slide active">
+<img src="images/view.jpeg" alt="School View">
+</div>
+
+<div class="slide">
+<img src="images/students.jpeg" alt="Students">
+</div>
+
+<div class="slide">
+<img src="images/staff.jpeg" alt="Staff">
+</div>
+
+</div>
+
+<div class="hero-text">
+<h1>Welcome to Kahinju Senior Secondary School</h1>
+</div>
+
+<button class="prev" type="button">&#10094;</button>
+<button class="next" type="button">&#10095;</button>
+
+<div class="dots">
+<span class="dot active"></span>
+<span class="dot"></span>
+<span class="dot"></span>
+</div>
+
+</section>
+
+<!-- ================= PROGRAMS ================= -->
+<section aria-label="Our Programs">
+<h2 class="section-title">Our Programs</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Lower Secondary</h3>
+<p>Competency-based curriculum focusing on skills and innovation.</p>
+</div>
+
+<div class="card">
+<h3>Upper Secondary</h3>
+<p>Academic excellence preparing students for university education.</p>
+</div>
+
+<div class="card">
+<h3>Co-Curricular Activities</h3>
+<p>Sports, leadership and talent development programs.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ================= STATISTICS ================= -->
+<section class="stats">
+
+<div class="stat">
+<h2 class="counter" data-target="1200">0</h2>
+<p>Students</p>
+</div>
+
+<div class="stat">
+<h2 class="counter" data-target="70">0</h2>
+<p>Teachers</p>
+</div>
+
+<div class="stat">
+<h2 class="counter" data-target="98">0</h2>
+<p>Success Rate %</p>
+</div>
+
+<div class="stat">
+<h2 class="counter" data-target="20">0</h2>
+<p>Years of Excellence</p>
+</div>
+
+</section>
+
+<!-- ================= NEWS ================= -->
+<section class="news">
+
+<h2 class="section-title">Latest News & Events</h2>
+
+<div class="news-container">
+
+<div class="news-card">
+<img src="images/class.jpeg" alt="Debate Competition">
+<h3>Inter-school Debate Competition</h3>
+<p>Our students emerged winners in the regional debate championship.</p>
+</div>
+
+<div class="news-card">
+<img src="images/view.jpeg" alt="Science Laboratory">
+<h3>New Science Laboratory</h3>
+<p>The school launched a modern laboratory to enhance learning.</p>
+</div>
+
+<div class="news-card">
+<img src="images/staff2.jpeg" alt="Career Guidance">
+<h3>Career Guidance Day</h3>
+<p>Professionals visited the school to inspire learners.</p>
+</div>
+
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+<div class="footer-container">
+
+<div>
+<h3>Contact Us</h3>
+<p>P.O Box 449, Fort Portal</p>
+<p>Phone: +256 772874003</p>
+<p>Email: kahinju2022@gmail.com</p>
+
+<div class="social-icons">
+<i class="fab fa-facebook"></i>
+<i class="fab fa-twitter"></i>
+<i class="fab fa-youtube"></i>
+<i class="fab fa-whatsapp"></i>
+</div>
+</div>
+
+<div class="map-section">
+
+<h3 class="map-title">School Location </h3>
+
+<iframe
+src="https://www.google.com/maps?q=Fort%20Portal%20Uganda&output=embed"
+title="School Location Map"
+loading="lazy">
+</iframe>
+
+</div>
+</div>
+
+<div class="footer-bottom">
+© 2026 Kahinju Senior Secondary School
+</div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+let slides=document.querySelectorAll(".slide");
+let dots=document.querySelectorAll(".dot");
+let index=0;
+
+function showSlide(i){
+slides.forEach(s=>s.classList.remove("active"));
+dots.forEach(d=>d.classList.remove("active"));
+slides[i].classList.add("active");
+dots[i].classList.add("active");
+index=i;
+}
+
+document.querySelector(".next").onclick=()=>{
+index=(index+1)%slides.length;
+showSlide(index);
+};
+
+document.querySelector(".prev").onclick=()=>{
+index=(index-1+slides.length)%slides.length;
+showSlide(index);
+};
+
+setInterval(()=>{
+index=(index+1)%slides.length;
+showSlide(index);
+},4000);
+
+/* COUNTER */
+document.querySelectorAll(".counter").forEach(counter=>{
+const update=()=>{
+const target=+counter.dataset.target;
+const count=+counter.innerText;
+const inc=target/100;
+
+if(count<target){
+counter.innerText=Math.ceil(count+inc);
+setTimeout(update,20);
+}else{
+counter.innerText=target;
+}
+};
+update();
+});
+
+
+
+</script>
+
+</body>
+</html>
