@@ -10,6 +10,7 @@ line-height:1.6;
 color:#222;
 min-height:100vh;
 background:#fff;
+padding-top: 80px;
 }
 
 img {
@@ -1553,6 +1554,10 @@ a {
         padding: 40px 20px 60px;
     }
 
+    body {
+        padding-top: 70px;
+    }
+
     .hero {
         height: 70vh;
     }
@@ -1738,6 +1743,10 @@ a {
 
     .admission-faq {
         padding: 30px 16px;
+    }
+
+    body {
+        padding-top: 60px;
     }
 
     .hero-buttons {
