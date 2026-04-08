@@ -1,9 +1,21 @@
 /* ===== GENERAL ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 line-height:1.6;
 color:#222;
+min-height:100vh;
+background:#fff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 .section-title{
@@ -21,11 +33,9 @@ background:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-/* smaller height */
-height:100px;
+min-height:100px;
 padding:0 30px;
-
+flex-wrap:wrap;
 box-shadow:0 2px 8px rgba(0,0,0,0.1);
 z-index:1000;
 }
@@ -41,8 +51,8 @@ height:100%;
 
 /* logo image stays visible */
 .logo-area img{
-height:100px;   /* controls logo size */
-width:150px;
+max-height:100px;
+width:auto;
 object-fit:contain;
 }
 
@@ -56,18 +66,21 @@ margin:0;
 nav{
 display:flex;
 align-items:center;
-height:100%;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
 }
 
 nav a{
 text-decoration:none;
 color:black;
 font-weight:bold;
-margin-left:25px;
+margin:0;
+padding:0 10px;
 font-size:20px;
 display:flex;
 align-items:center;
-height:100%;
+height:auto;
 transition:0.3s;
 }
 
@@ -403,6 +416,9 @@ padding:15px;
   align-items: stretch;
   gap: 40px;
   padding: 40px 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 /* LEFT SIDE - Contact */
@@ -945,8 +961,202 @@ a {
 /* ================= MOBILE RESPONSIVE ================= */
 
 @media (max-width: 900px) {
+    section,
+    .cards,
+    .news-container,
+    .stats,
+    .about-history,
+    .school-statements,
+    .academic-facilities,
+    .admission-form-section,
+    .admission-faq,
+    .contact-section {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    header {
+        padding: 15px 20px;
+        align-items: flex-start;
+    }
+
+    .logo-area {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .logo-area h2 {
+        font-size: 32px;
+    }
+
+    .logo-area img {
+        max-height: 80px;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 10px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .hero {
+        min-height: 60vh;
+    }
+
+    .hero-text h1,
+    .academics-hero .hero-text h1,
+    .about-hero .hero-content h1,
+    .contact-hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        padding: 15px 20px;
+    }
+
+    .prev,
+    .next {
+        padding: 8px;
+        font-size: 20px;
+    }
+
+    .cards,
+    .news-container,
+    .stats,
+    .history-container,
+    .statements-container,
+    .facility-container,
+    .levels-grid,
+    .admission-info,
+    .contact-section {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cards,
+    .news-container,
+    .stats {
+        padding: 20px;
+    }
+
+    .stats {
+        padding: 40px 20px;
+    }
+
+    .news-card img,
+    .history-image img,
+    .facility-image img,
+    .contact-form img {
+        height: auto;
+    }
+
+    .about-history,
+    .school-statements,
+    .academic-facilities,
+    .admission-form-section,
+    .admission-faq,
+    .contact-section,
+    .footer-container {
+        padding: 30px 20px;
+    }
+
+    .history-image {
+        height: auto;
+    }
+
+    .statement-box,
+    .level-card,
+    .admission-info div,
+    .info-box,
+    .step {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .intro-container,
+    .facility-container,
+    .history-container {
+        align-items: stretch;
+    }
+
     .contact-section {
         grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .footer iframe {
+        height: 220px;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .logo-area h2 {
+        font-size: 26px;
+    }
+
+    .nav a,
+    nav a {
+        font-size: 14px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+        margin: 30px 0 20px;
+    }
+
+    .hero {
+        min-height: 55vh;
+    }
+
+    .admission-hero,
+    .academics-hero {
+        height: 55vh;
+    }
+
+    .admission-form,
+    .contact-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .admission-form input,
+    .admission-form select,
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 1rem;
+    }
+
+    .admission-info,
+    .steps-container,
+    .contact-section,
+    .footer-container {
+        gap: 15px;
+    }
+
+    .admission-info div,
+    .info-box,
+    .statement-box,
+    .level-card,
+    .step {
+        padding: 15px;
+    }
+
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 18px;
+        right: 18px;
     }
 }
 
