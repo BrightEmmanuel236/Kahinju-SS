@@ -719,6 +719,11 @@ flex-direction:column;
 flex-direction:column;
 }
 
+.why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
 .footer-container {
     flex-direction: column;
     gap: 30px;
@@ -1444,6 +1449,10 @@ a {
     .cards,
     .news-container {
         gap: 20px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
     }
 
     .why-card,
