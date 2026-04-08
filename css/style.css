@@ -1423,8 +1423,12 @@ a {
         min-height: 55vh;
     }
 
+    .hero-tag {
+        font-size: 0.8rem;
+    }
+
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
