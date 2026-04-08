@@ -105,7 +105,7 @@ color:#ffd700;
 /* ===== HERO ===== */
 .hero{
 position:relative;
-height:85vh;
+height:90vh;
 overflow:hidden;
 }
 
@@ -117,7 +117,7 @@ height:100%;
 
 .slide{
 opacity:0;
-transition:opacity 1s;
+transition:opacity 1.2s ease-in-out;
 }
 
 .slide.active{opacity:1;}
@@ -128,20 +128,95 @@ height:100%;
 object-fit:cover;
 }
 
-.hero-text{
-position:relative;
-z-index:2;
-height:100%;
-display:flex;
-justify-content:center;
-align-items:center;
-color:white;
+.slide-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: linear-gradient(135deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 100%);
 }
 
-.hero-text h1{
-background:rgba(0,0,0,0.6);
-padding:20px;
-border-radius:8px;
+.hero-content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%, -50%);
+color:white;
+text-align:center;
+z-index:3;
+max-width:800px;
+width:90%;
+animation: fadeInUp 1.5s ease-out;
+}
+
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translate(-50%, -30%);
+}
+to {
+opacity: 1;
+transform: translate(-50%, -50%);
+}
+}
+
+.hero-title{
+font-size:3.5rem;
+font-weight:700;
+margin-bottom:1rem;
+text-shadow:2px 2px 4px rgba(0,0,0,0.7);
+line-height:1.2;
+}
+
+.hero-subtitle{
+font-size:1.3rem;
+margin-bottom:2rem;
+text-shadow:1px 1px 2px rgba(0,0,0,0.7);
+font-weight:300;
+}
+
+.hero-buttons{
+display:flex;
+gap:1rem;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+.btn-primary, .btn-secondary{
+display:inline-block;
+padding:0.8rem 2rem;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+font-size:1.1rem;
+transition:all 0.3s ease;
+text-transform:uppercase;
+letter-spacing:0.5px;
+}
+
+.btn-primary{
+background:linear-gradient(135deg, #ffd700, #ffb347);
+color:#333;
+box-shadow:0 4px 15px rgba(255,215,0,0.4);
+}
+
+.btn-primary:hover{
+transform:translateY(-3px);
+box-shadow:0 6px 20px rgba(255,215,0,0.6);
+}
+
+.btn-secondary{
+background:transparent;
+color:white;
+border:2px solid white;
+box-shadow:0 4px 15px rgba(255,255,255,0.2);
+}
+
+.btn-secondary:hover{
+background:white;
+color:#333;
+transform:translateY(-3px);
 }
 
 /* arrows */
@@ -149,21 +224,29 @@ border-radius:8px;
 position:absolute;
 top:50%;
 transform:translateY(-50%);
-background:rgba(0,0,0,0.5);
+background:rgba(255,255,255,0.2);
 color:white;
 border:none;
-font-size:25px;
-padding:10px;
+font-size:2rem;
+padding:1rem;
 cursor:pointer;
+border-radius:50%;
+transition:all 0.3s ease;
+backdrop-filter:blur(10px);
 }
 
-.prev{left:20px;}
-.next{right:20px;}
+.prev{left:2rem;}
+.next{right:2rem;}
+
+.prev:hover, .next:hover{
+background:rgba(255,255,255,0.4);
+transform:translateY(-50%) scale(1.1);
+}
 
 /* dots */
 .dots{
 position:absolute;
-bottom:20px;
+bottom:2rem;
 width:100%;
 text-align:center;
 }
@@ -171,13 +254,17 @@ text-align:center;
 .dot{
 height:12px;
 width:12px;
-background:#bbb;
+background:rgba(255,255,255,0.5);
 display:inline-block;
-margin:5px;
+margin:0 8px;
 border-radius:50%;
+cursor:pointer;
+transition:all 0.3s ease;
 }
 
-.dot.active{background:#ffd700;}
+.dot.active{background:#ffd700; box-shadow:0 0 10px rgba(255,215,0,0.8);}
+
+.dot:hover{background:rgba(255,255,255,0.8);}
 
 /* ===== CARDS ===== */
 .cards{
@@ -1052,15 +1139,39 @@ a {
     }
 
     .hero {
-        min-height: 60vh;
+        height: 70vh;
     }
 
-    .hero-text h1,
-    .academics-hero .hero-text h1,
-    .about-hero .hero-content h1,
-    .contact-hero h1 {
-        font-size: clamp(2rem, 5vw, 3rem);
-        padding: 15px 20px;
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .prev, .next {
+        padding: 0.8rem;
+        font-size: 1.5rem;
+    }
+
+    .prev {
+        left: 1rem;
+    }
+
+    .next {
+        right: 1rem;
     }
 
     .prev,
@@ -1162,6 +1273,14 @@ a {
 
     .hero {
         min-height: 55vh;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .admission-hero,
