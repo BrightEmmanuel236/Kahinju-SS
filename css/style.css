@@ -637,9 +637,10 @@ line-height:1.7;
   flex-wrap: wrap;
 }
 
-/* LEFT SIDE - Contact */
-.footer-container div:first-child {
+/* footer sections */
+.footer-section {
   flex: 1;
+  min-width: 250px;
 }
 
 .footer h3 {
@@ -651,10 +652,30 @@ line-height:1.7;
   margin: 6px 0;
 }
 
+/* quick links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin: 8px 0;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+}
+
 /* social icons */
 .social-icons {
   margin-top: 15px;
-
 }
 
 .social-icons i {
@@ -662,24 +683,20 @@ line-height:1.7;
   margin-right: 12px;
   cursor: pointer;
   transition: 0.3s;
-  color: maroon;   
-
+  color: maroon;
 }
 
 .social-icons i:hover {
   color: #ffd700;
 }
 
-/* RIGHT SIDE - Map */
-.footer-container div:last-child {
-  flex: 2; /* makes map larger than contact section */
-}
-
-.footer iframe {
+/* map section */
+.map-section iframe {
   width: 100%;
   height: 250px;
   border: none;
   border-radius: 8px;
+  margin-top: 10px;
 }
 
 /* bottom copyright */
@@ -700,6 +717,20 @@ flex-direction:column;
 .news-container,
 .stats{
 flex-direction:column;
+}
+
+.footer-container {
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px 20px;
+}
+
+.footer-section {
+    text-align: center;
+}
+
+.map-section iframe {
+    height: 220px;
 }
 }
 
@@ -1392,6 +1423,55 @@ a {
 
     .hero-subtitle {
         font-size: 1rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    .why-choose,
+    .news {
+        padding: 20px;
+    }
+
+    .why-grid,
+    .cards,
+    .news-container {
+        gap: 20px;
+    }
+
+    .why-card,
+    .card,
+    .news-card {
+        padding: 20px;
+    }
+
+    .stats {
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .stat {
+        padding: 15px;
+    }
+
+    .footer-container {
+        padding: 30px 20px;
+        gap: 25px;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .map-section iframe {
+        height: 200px;
     }
 
     .admission-hero,
